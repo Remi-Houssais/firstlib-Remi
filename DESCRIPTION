@@ -1,0 +1,19 @@
+Package: firstlib.Remi
+Title: Package pour l'analyse des données sur des élus et des communes
+Version: 0.0.0.9000
+Authors@R: 
+    person("Rémi", "HOUSSAIS", , "first.last@example.com", role = c("aut", "cre"))
+Description: Ce package fournit des fonctions pour analyser les données des élus et des collectivités locales,
+il peut notamment fournir le nombre d'élus ou bien l'élus le plus agé.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: dplyr, lubridate, purrr, stats, ggplot2
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Depends: 
+    R (>= 3.5)
+LazyData: true
