@@ -1,0 +1,69 @@
+---
+
+title: "Générer un rapport d'analyses"
+author: "Houssais Rémi"
+output: quarto::html
+VignetteBuilder: quarto
+---
+
+```{r}
+# Charger la bibliothèque nécessaire
+library(firstlib.Remi)
+# Introduction
+```
+Dans cette vignette, nous allons explorer trois fonctions principales utilisées dans le package `firstlib.Remi` :
+1. `summary_commune()`
+2. `summary_departement()`
+3. `generer_rapport()`
+
+Nous allons expliquer comment utiliser ces fonctions pour générer des résumés statistiques sur les élus d'une commune et d'un département, puis produire un rapport personnalisé.
+
+# 1. La fonction `summary_commune()`
+
+La fonction `summary_commune()` génère un résumé détaillé des élus dans une commune donnée. Ce résumé inclut des informations sur les élus, telles que leur âge et leur répartition par tranche d'âge.
+
+### Utilisation de `summary_commune()`:
+```{r}
+# Charger les données pour la commune de Nantes
+df_nantes <- elus_conseillers_municipaux_cm_1_[elus_conseillers_municipaux_cm_1_$Libellé.de.la.commune == "Nantes", ]
+
+# Modifier la classe de l'objet pour le rendre compatible avec la fonction summary_commune
+class(df_nantes) <- c("commune", class(df_nantes))
+
+# Appeler la fonction summary_commune pour obtenir le résumé de la commune
+summary_commune(df_nantes)
+
+```
+
+# 2. La fonction `summary_departement()`
+
+La fonction `summary_departement()` génère un résumé des élus dans un département donné. Elle fournit des statistiques détaillées sur les élus, telles que leur âge, la répartition des âges, et des informations supplémentaires comme l'élu le plus âgé, le plus jeune, ou les communes ayant les âges moyens les plus faibles ou les plus élevés.
+
+Utilisation de `summary_departement()`:
+```{r}
+# Charger les données pour le département de Loire-Atlantique
+df_Loire_atlantique <- elus_conseillers_municipaux_cm_1_[elus_conseillers_municipaux_cm_1_$Libellé.du.département == "Loire-Atlantique", ]
+
+# Modifier la classe de l'objet pour le rendre compatible avec la fonction summary_departement
+class(df_Loire_atlantique) <- c("département", class(df_Loire_atlantique))
+
+# Résumé pour le département de Loire-Atlantique (code 44)
+summary_departement(df_Loire_atlantique)
+
+```
+
+# 3. La fonction `generer_rapport()`
+
+La fonction `generer_rapport()` permet de générer un rapport HTML détaillé à partir des données d’une commune et d’un département donnés. Ce rapport est généré sous forme de fichier HTML et inclut les informations traitées par les fonctions `summary_commune()` et `summary_departement()`.
+
+### Utilisation de `generer_rapport()`
+```{r}
+# Appeler la fonction générer_rapport pour générer le rapport
+generer_rapport(
+  commune = "44109",         # Code de la commune (Nantes)
+  departement = "44",        # Code du département (Loire-Atlantique)
+  output = "rapport_nantes.html"  # Chemin d'enregistrement du rapport
+)
+
+```
+

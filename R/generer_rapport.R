@@ -10,7 +10,7 @@
 #'
 #' @return un fichier html
 #'
-#' @importFrom quarto quarto_render
+#' @import quarto
 #' @import ggplot2
 #' @examples
 #' \dontrun{
