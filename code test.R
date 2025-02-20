@@ -56,3 +56,11 @@ plot_departement(df_Gers)
 
 creer_commune(df_nantes)
 creer_departement(df_Loire_atlantique)
+
+# Exemple d'appel de la fonction generer_rapport
+generer_rapport(
+  commune = "35330",         # Code de la commune (ex : Taillis)
+  departement = "35",        # Code du département (ex : Ile et Vilaine)
+  output = "rapport_RENNES.html"  # Chemin d'enregistrement du rapport
+)
+

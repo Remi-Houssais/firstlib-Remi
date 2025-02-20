@@ -1,0 +1,41 @@
+---
+title: "rapport"
+format: "html"
+author: "Rémi Houssais"
+params: 
+  code_commune: "44082"
+  code_departement: "44"
+---
+
+```{r}
+library(remotes)
+library(firstlib.Remi)
+
+data("elus_conseillers_municipaux_cm_1_")
+
+# Paramètres
+code_commune <- params$code_commune
+code_departement <- params$code_departement
+
+# Commune
+df_commune <- elus_conseillers_municipaux_cm_1_[
+  elus_conseillers_municipaux_cm_1_$Code.de.la.commune == code_commune & 
+  elus_conseillers_municipaux_cm_1_$Code.du.département == code_departement, ]
+
+if (nrow(df_commune) > 0) {
+  class(df_commune) <- c("commune", class(df_commune))
+  summary_commune(df_commune)
+  plot_commune(df_commune)
+}
+
+# Département
+df_departement <- elus_conseillers_municipaux_cm_1_[
+  elus_conseillers_municipaux_cm_1_$Code.du.département == code_departement, ]
+
+if (nrow(df_departement) > 0) {
+  class(df_departement) <- c("département", class(df_departement))
+  summary_departement(df_departement)
+  plot_departement(df_departement)
+}
+
+```
