@@ -32,7 +32,7 @@
 generer_rapport <- function(commune, departement, output) {
   quarto::quarto_render(
     input = file.path("C:", "Users", "Remih", "OneDrive", "Bureau",
-                      "cours M1", "R avancé et GIT", "firstlib.Remi",
+                      "cours M1", "R avancé et GIT", "firstlib-Remi",
                       "inst", "rapport.qmd"),
 
     output_file = output,
