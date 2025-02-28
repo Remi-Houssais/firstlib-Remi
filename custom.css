@@ -1,0 +1,17 @@
+/* Changer la couleur des onglets */
+.navbar-nav > li > a {
+    color: #ffffff !important;  /* Texte blanc */
+    background-color: #007bff !important; /* Bleu */
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+/* Couleur au survol */
+.navbar-nav > li > a:hover {
+    background-color: #0056b3 !important; /* Bleu foncé */
+}
+
+/* Onglet actif */
+.navbar-nav > .active > a {
+    background-color: #FF6F61 !important; /* Rouge */
+}
