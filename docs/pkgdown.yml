@@ -1,0 +1,9 @@
+pandoc: 3.1.11
+pkgdown: 2.1.1
+pkgdown_sha: ~
+articles:
+  generer_rapport: generer_rapport.html
+last_built: 2025-02-28T11:40Z
+urls:
+  reference: https://remi-houssais.github.io/firstlib-Remi/reference
+  article: https://remi-houssais.github.io/firstlib-Remi/articles
