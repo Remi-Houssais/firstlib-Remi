@@ -1,33 +1,4 @@
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #1e1e2e;
-    color: #ffffff;
-    margin: 0;
-    padding: 20px;
-  }
-  h1 { color: #00A8E8; }
-  h2 { color: #FF6F61; }
-  h3 { color: #4CAF50; }
-  a { color: #FFD700; }
-  code {
-    background-color: #333;
-    color: #FFD700;
-    padding: 5px;
-    border-radius: 5px;
-  }
-  .container {
-    max-width: 800px;
-    margin: auto;
-    background: #2a2a3a;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  }
-</style>
-
-<div class="container">
 
 # ️ <span style="color:#00A8E8;">FirstLib-Remi: Analyse des Données sur les Élus</span>
 
